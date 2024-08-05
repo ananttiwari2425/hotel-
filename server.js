@@ -29,7 +29,7 @@ app.use(myLogger);
 passport.use(new LocalStrategy(async(USERNAME,Password,done) =>{
   //authentication logic here
   try{
-    console.log(USERNAME,Password);
+    //console.log(USERNAME,Password);
     const user=await Person.findOne({username:USERNAME});
     if(!user){
       return done(null,false,{message:'Incorrect Username'})
