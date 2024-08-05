@@ -25,7 +25,7 @@ router.post('/',async (req,res)=>{
 router.get('/',async(req,res)=>{
     try{
       const data=await Person.find();
-      console.log('data saved');
+      console.log('data fetched');
       res.status(200).json(data);
     }catch(err){
       console.log(err);
@@ -68,6 +68,9 @@ router.get('/:workType',async(req,res)=>{
       res.status(500).json({error:'Internal server Error'})
     }
   })
+
+
+  //Passport.js is very famous middleware authetication in nodejs
 
   router.delete('/:id',async(req,res)=>{
     try{
